@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="my-app">
+        <h1>{{greet}}{{name}} !</h1>
+        <div v-text="appName">No App</div>
+        <div>
+            <h1>{{appName}}</h1>
+            <h1 v-text="appName"></h1>
+            <h1 v-once>{{appName}}</h1>
+            <h1 v-text="appName" v-once></h1>
+        </div>
+        <p>{{brandName}}</p>
+        <p v-text="brandName"></p>
+        <p v-html="brandName"></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+    <script>
+        var vm = new Vue({
+            el: '#my-app',
+            data: {
+                name: "Nidhi",
+                greet: "Verma",
+                appName: "My App",
+                brandName: "<b>NV</b>"
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!-- Data Binding: 2 type
+- mustache syntext: {{}} :  for text (instant reflect to ui)
+- v-text dirctive : for text
+- v-once dirctive : will bind data only once
+- v-html dirctive : binding value inside html tag
+ -->

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="my-app">
+        <!-- bind dynamic value as well as static value -->
+        <h1 v-bind:style="{color: highlightColor, fontSize: headerSize+'px', padding: '20px'}">Inline</h1>
+        <h1 v-bind:style="{color: highlightColor, 'font-size': headerSize+'px'}">Inline</h1>
+        <h1 v-bind:style="headerStyleObject">Style Object</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+    <script>
+        var vm = new Vue({
+            el: '#my-app',
+            data: {
+              highlightColor: "Orange",
+              headerSize: 50,
+              headerStyleObject: {
+                  color: "red",
+                  fontSize: "50px",
+                  padding: "20px"
+              }
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!-- Data Binding: 2 type
+- mustache syntext: {{}} :  for text (instant reflect to ui)
+- v-text dirctive : for text
+- v-once dirctive : will bind data only once
+- v-html dirctive : binding value inside html tag
+- v-bind:id : binding by id
+- v-bind:disabled : for class and style
+- v-bind:style : it is support style object and inline styles also
+ -->

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="my-app">
+        <h1 v-bind:id="myId">Nidhi Verma</h1>
+        <button v-bind:disabled="isDisabled">Bind</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+    <script>
+        var vm = new Vue({
+            el: '#my-app',
+            data: {
+               myId: "dataId",
+               isDisabled: true,
+               //isDisabled: false,
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!-- Data Binding: 2 type
+- mustache syntext: {{}} :  for text (instant reflect to ui)
+- v-text dirctive : for text
+- v-once dirctive : will bind data only once
+- v-html dirctive : binding value inside html tag
+- v-bind:id : binding by id
+- v-bind:disabled : for class and style
+ -->
